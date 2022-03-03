@@ -4,6 +4,7 @@ import {
   BaseEntity,
   PrimaryGeneratedColumn,
   ManyToOne,
+  CreateDateColumn,
 } from 'typeorm';
 import {
   IsOptional,
@@ -56,4 +57,7 @@ export class User extends BaseEntity {
 
   @Column({ nullable: false })
   companyId?: number;
+
+  @CreateDateColumn()
+  createAt: Date;
 }

@@ -13,6 +13,12 @@ import { CompanyService } from './company.service';
     join: {
       users: { eager: true },
     },
+    sort: [
+      {
+        field: 'createAt',
+        order: 'ASC',
+      },
+    ],
   },
 })
 @ApiTags('company')

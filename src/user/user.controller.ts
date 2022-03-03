@@ -19,6 +19,14 @@ import { ApiTags } from '@nestjs/swagger';
       primary: true,
     },
   },
+  query: {
+    sort: [
+      {
+        field: 'createAt',
+        order: 'ASC',
+      },
+    ],
+  },
 })
 @ApiTags('user')
 @Controller('/company/:companyId/user')

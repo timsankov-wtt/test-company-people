@@ -4,13 +4,13 @@ import {
   OneToMany,
   BaseEntity,
   PrimaryGeneratedColumn,
+  CreateDateColumn,
 } from 'typeorm';
 import {
   IsOptional,
   IsString,
   MaxLength,
   IsNotEmpty,
-  isEmail,
   IsEmail,
 } from 'class-validator';
 import { Type } from 'class-transformer';
@@ -52,4 +52,7 @@ export class Company extends BaseEntity {
   @OneToMany(() => User, (user) => user.company)
   @Type(() => User)
   users: User[];
+
+  @CreateDateColumn()
+  createAt: Date;
 }
